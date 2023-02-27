@@ -1,14 +1,14 @@
 ﻿int ReadInt()
-{    
-    int number;
-while (true)
 {
-    Console.Write("Введите число от 1 до 7: ");
-    if (int.TryParse(Console.ReadLine(), out number))
-        break;
-    Console.WriteLine("Ошибка ввода!");
-}
-return number;
+    int number;
+    while (true)
+    {
+        Console.Write("Введите число от 1 до 7: ");
+        if (int.TryParse(Console.ReadLine(), out number))
+            break;
+        Console.WriteLine("Ошибка ввода!");
+    }
+    return number;
 }
 
 int Week(int num)
@@ -24,6 +24,5 @@ int Week(int num)
     return num;
 }
 
-//Console.Write("Введите число от 1 до 7: ");
 int dayNumber = ReadInt();
 Console.WriteLine(Week(dayNumber));

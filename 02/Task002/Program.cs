@@ -14,6 +14,7 @@ int ThirdNumber(int num)//функция поиска третьей цифры
     return result;
 }
 
+
 Console.Write("Введите число - ");
 int number = ReadNumber();
 int index = number.ToString().Length;

@@ -12,6 +12,7 @@ int index2 = (number % 10000) / 1000;
 int index3 = (number % 100) / 10;
 int index4 = number % 10;
 
+
 if (index == 5)
 {
     if ((index1 == index4) && (index2 == index3))

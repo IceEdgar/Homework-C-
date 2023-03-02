@@ -1,22 +1,32 @@
-﻿int number;
-while (true)
-{
-    Console.Write("Введите пятизначное число - ");
-    if (int.TryParse(Console.ReadLine(), out number))
-        break;
-    Console.WriteLine("Ошибка ввода!");
-}
-int index = number.ToString().Length;
-int index1 = number / 10000;
-int index2 = (number % 10000) / 1000;
-int index3 = (number % 100) / 10;
-int index4 = number % 10;
+﻿Console.Clear();
+int number = InputNumber("Введите пятизначное число -");
+CheckingNumber(number);
 
-
-if (index == 5)
+static int InputNumber(string message)
 {
-    if ((index1 == index4) && (index2 == index3))
-        Console.Write($"Число {number} -  палиндром");
-    else Console.Write($"Число {number} - не палиндром");
+    try
+    {
+        Console.Write(message);
+        return (int.Parse(Console.ReadLine() ?? ""));
+    }
+    catch (Exception exc)
+    {
+        Console.WriteLine($"Ошибка ввода данных! {exc.Message}");
+        return 0;
+    }
 }
-else Console.Write("Вы ввели не пятизначное число");
+
+static void CheckingNumber(int number)
+{
+    int index = number.ToString().Length;
+    int x1 = number / 10000;
+    int x2 = (number % 10000) / 1000;
+    int x3 = (number % 100) / 10;
+    int x4 = number % 10;
+    if (index == 5)
+    {
+        if ((x1 == x4) && (x2 == x3)) Console.Write($"Число {number} -  палиндром");
+        else Console.Write($"Число {number} - не палиндром");
+    }
+    else Console.Write("Вы ввели не пятизначное число");
+}

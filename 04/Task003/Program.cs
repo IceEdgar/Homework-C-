@@ -9,11 +9,11 @@ void FillArray(int[] collection)
     int index = 0;
     while (index < 8)
     {
-        
+
         try
         {
             Console.Write("Введите число -");
-            array [index]=Convert.ToInt32(Console.ReadLine());
+            array[index] = Convert.ToInt32(Console.ReadLine());
             index++;
         }
         catch (Exception exc)

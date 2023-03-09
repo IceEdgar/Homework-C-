@@ -3,7 +3,7 @@ int num1 = InputNumber("Введите не отрицательное числ�
 int num2 = InputNumber("Введите не отрицательное число ", "Ошибка ввода данных!");
 
 //Logic
-int sumNambers = GetSumNumbers(num1,num2);
+int sumNambers = GetSumNumbers(num1, num2);
 
 //Output
 Console.WriteLine($"{num1} {num2} -> {sumNambers}");

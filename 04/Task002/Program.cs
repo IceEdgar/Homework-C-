@@ -16,8 +16,8 @@ int GetSumNumbers(int number)
 
     while (number > 0)
     {
-        itog = itog+(number%10);
-        number=number/10;
+        itog = itog + (number % 10);
+        number = number / 10;
     }
 
     return itog;

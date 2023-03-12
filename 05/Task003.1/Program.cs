@@ -3,9 +3,7 @@ int num = InputNumber("Введите длинну массива ", "Ошибк
 int[] array = new int[num];
 FillArray(array, num);
 Console.WriteLine($"[{String.Join(",", array)}]");
-int max = FindMaxIndex(array, num);
-int min = FindMinIndex(array, num);
-Console.WriteLine($"Разница между максимальным ({max}) и минимальным ({min}) элементов массива = {max-min}");
+Console.WriteLine($"Разница между максимальным и минимальным элементов массива = {FindDifference(array, num)}");
 
 
 
@@ -41,22 +39,19 @@ void FillArray(int[] collection, int i)
 }
 
 
-int FindMaxIndex(int[] arrayA, int lengthA)
+int FindDifference(int[] arr, int length)
 {
-    int max = arrayA[0];
-    for (int i = 1; i < lengthA; i++)
+    int min = arr[0];
+    int max = arr[0];
+    int dif = 0;
+    for (int i = 1; i < length; i++)
     {
-        if (arrayA[i] > max) max = arrayA[i];
+        if (arr[i] > max) max = arr[i];
+        else
+        {
+            if (arr[i] < min) min = arr[i];
+        }
     }
-    return max;
-}
-
-int FindMinIndex(int[] arrayB, int lengthB)
-{
-    int min = arrayB[0];
-    for (int i = 1; i < lengthB; i++)
-    {
-        if (arrayB[i] < min) min = arrayB[i];
-    }
-    return min;
+    dif = max - min;
+    return dif;
 }
